@@ -338,21 +338,11 @@ function validateForm() {
       return false;
   }
 
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("simple-msg").innerHTML = this.responseText;
-          document.forms["myForm"]["name"].value = "";
-          document.forms["myForm"]["email"].value = "";
-          document.forms["myForm"]["subject"].value = "";
-          document.forms["myForm"]["comments"].value = "";
-      }
-  };
-  xhttp.open("POST", "php/contact.php", true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("name=" + name + "&email=" + email + "&subject=" + subject + "&comments=" + comments);
-  return false;
+  //document.forms["myForm"].reset();
+
+  return true;
 }
+
 
 function fadeIn() {
   var fade = document.getElementById("error-msg");
@@ -366,4 +356,3 @@ function fadeIn() {
       }
   }, 200);
 }
-
