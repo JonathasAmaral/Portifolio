@@ -356,12 +356,3 @@ function fadeIn() {
       }
   }, 200);
 }
-
-document.getElementById('downloadBtn').addEventListener('click', function() {
-  const link = document.createElement('a');
-  link.href = '/PDF/CV - Jonathas.pdf';
-  link.download = 'CV - Jonathas.pdf'; // Nome com o qual o PDF será salvo
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-});
